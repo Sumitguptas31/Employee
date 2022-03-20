@@ -17,8 +17,3 @@ const authorModel = new mongoose.Schema(
 )
 
 module.exports = mongoose.model('Author', authorModel);
-
-
-
-
-

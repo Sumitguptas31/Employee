@@ -31,7 +31,7 @@ const authorise = function(req, res, next) {
     if(!token) return res.send({status: false, msg: "token must be present in the request header"})
     let decodedToken = jwt.verify(token, 'functionup-project')
     console.log(decodedToken)
-    let userToBeModified = req.params.author
+    let userToBeModified = req.params.authorId
     //userId for the logged-in user
     let userLoggedIn = decodedToken.blogId
 
