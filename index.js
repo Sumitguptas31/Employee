@@ -3,16 +3,12 @@ const app = express();
 const bodyParser = require('body-parser');
 const route = require('./routes/route');
 const mongoose = require('mongoose');
-const blogModel = require('./models/blogModel');
-
-
-
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use('/', route);
 
-mongoose.connect("mongodb+srv://functionup-cohort:G0Loxqc9wFEGyEeJ@cluster0.rzotr.mongodb.net/sumitgupta98-DB?retryWrites=true&w=majority", {
+mongoose.connect("mongodb+srv://rahat6713:1819rahat@cluster0.iee0y.mongodb.net/sumit?retryWrites=true&w=majority", {
     useNewUrlParser: true
 })
 .then( () => console.log("MongoDb is connected"))
@@ -24,20 +20,3 @@ app.listen(process.env.PORT || 3000, function () {
 });
 
 
-
-
-// let blogID = req.body; //622f3340190388d4d8ad3adc
-// if(!blogID){
-//     res.s
-// }
-// let data = await blogModel.find({isDeleted: false},{isPublished: true})
-
-// let result = [];
-// for (let i = 0; i < len; i++) {
-//     if (blogFound[i].isDeleted == false && blogFound[i].isPublished == true) {
-//       arr.push(blogFound[i]);
-//     } else {
-//       continue;
-//     }
-//   }
-//https://forms.gle/D7woy4AAkbdnkn5u5
