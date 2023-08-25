@@ -1,4 +1,4 @@
-const employeeModel = require("../Models/employeeModel")
+const employeeModel = require("../models/employeeModel")
 const awsFile = require('aws-sdk')
 
 
@@ -75,16 +75,10 @@ const CreateUser = async function (req, res) {
         if (!(/^[6-9]\d{9}$/.test(phone))) {
             return res.status(400).send({ status: false, message: `Phone number should be a valid number` })
         }
-        if (!isValid(profileImage)) {
-            return res.status(400).send({status: false, msg: "Enter profileImage " })
-        }
         let files = req.files
         if (files && files.length > 0) {
             data["profileImage"] = await uploadFile(files[0])
-        } else {
-            return res.status(400).send({ status: false, message: "please provide profileImage " })
-
-        }
+        } 
         const NewUsers = await employeeModel.create(data)
         return res.status(201).send({ Status: true, msg: "Employee Added", data: NewUsers })
 
@@ -189,4 +183,10 @@ const Pagination= async function(req,res){
         
     }
 }
-module.exports= {CreateUser,updateUser,getUser,deleteUser,sortUser,Pagination}
+
+function up(){
+    return new Promise((resolve, reject) => {
+        resolve()
+    })
+}
+module.exports= {CreateUser,updateUser,getUser,deleteUser,sortUser,Pagination,up}

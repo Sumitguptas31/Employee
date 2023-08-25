@@ -4,18 +4,24 @@
   "description": "mini project ",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "nodemon index.js",
+    "test": "mocha lib/**/**.spec.js"
   },
   "author": "ishvinder singh",
   "license": "ISC",
   "dependencies": {
+    "assert": "^2.0.0",
     "aws-sdk": "^2.1221.0",
-    "body-parser": "^1.20.0",
+    "cc": "^1.20.0",
+    "chai": "^4.3.8",
+    "chai-http": "^4.4.0",
+    "cors": "^2.8.5",
     "eslint": "^8.23.1",
     "express": "^4.17.3",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.2.6",
     "multer": "^1.4.5-lts.1",
-    "nodemon": "^2.0.15"
+    "nodemon": "^2.0.15",
+    "path": "^0.12.7"
   }
 }
